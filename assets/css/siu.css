@@ -531,3 +531,37 @@ h1,h2,h3,h4{font-family:var(--head);line-height:1.1;letter-spacing:-.02em;color:
 }
 @media (max-width:640px){.pass-top{padding:14px 18px;font-size:.62rem}.pass-top span{font-size:.6rem!important;letter-spacing:.12em!important}}
 @media (max-width:400px){.pt-brand{display:none}}
+
+/* ===== bug fixes v1.1 ===== */
+html{scroll-padding-top:96px}
+[id]{scroll-margin-top:96px}
+@media (max-width:640px){html{scroll-padding-top:80px}[id]{scroll-margin-top:80px}}
+.nav-open .top{background:#fff;backdrop-filter:none}
+/* hero routes: no stretched dashes, fade behind text */
+.hero-routes path{vector-effect:non-scaling-stroke}
+.hero-routes{opacity:.35;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%);mask-image:linear-gradient(90deg,transparent 0%,#000 55%)}
+/* boarding pass stage: chips anchored to the pass, never over its header */
+.pass-stage{max-width:540px;width:100%;margin-inline:auto}
+.pc1{top:auto;bottom:18%;left:-6%}
+.pc2{bottom:auto;top:8%;right:-6%}
+@media (max-width:640px){.pc1{left:0;bottom:6%}.pc2{right:0;top:0}.pass-stage{padding:56px 0 46px}}
+/* gauge label */
+.gauge b{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.gauge b small{margin:8px 0 0}
+/* big destination card: show the whole cover */
+.dcard:first-child{align-items:stretch}
+.dcard:first-child img{width:60%;height:auto;min-height:0;aspect-ratio:1200/630;object-fit:cover;object-position:center;align-self:center}
+@media (max-width:1080px){.dcard:first-child{flex-direction:column}.dcard:first-child img{width:100%}}
+/* v1.1b: chips sit above/below the pass, never on it */
+.pass-stage{height:auto;padding:76px 0 84px}
+.pc1{top:auto;bottom:14px;left:2%}
+.pc2{top:4px;bottom:auto;right:2%}
+.dots-pager{bottom:30px;left:auto;right:6%;transform:none}
+@media (max-width:640px){.pass-stage{padding:70px 0 76px}.pc1{left:0;bottom:8px}.pc2{right:0;top:2px}.dots-pager{right:0;bottom:28px}}
+/* big Italy card hugs its image */
+.dcard:first-child{align-items:center}
+.dcard:first-child .dbody{justify-content:center;align-self:stretch}
+.dcard:first-child .dmeta{margin-top:18px}
+@media (max-width:1080px){.dcard:first-child{align-items:stretch}}
+.dcard picture{display:contents}
+@media (min-width:1081px){.dcard:first-child{align-items:stretch}.dcard:first-child img{width:58%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:left center;align-self:stretch}}
